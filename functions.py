@@ -5,7 +5,7 @@ def log_workout(workouts):
     - Print a confirmation message.
     """
     workout_type = input("What type of workout did you do?\nType of workout: ")
-    duration = float(input("Duration: "))
+    duration = float(input("Duration (in minutes): "))
     workouts.append(workout_type)
     workouts.append(duration)
 
@@ -30,13 +30,10 @@ def log_calorie_intake(calories):
     print(final_message)
 
 def calculate_duration(workouts):
-    total_hours = 0
-    total_minutes = 0
+    total_duration = 0
     for element in range(len(workouts)):
         if element % 2 != 0:
-            total_hours += int(workouts[element])
-            total_minutes += workouts[element] - int(workouts[element])
-    total_duration = total_hours * 60 + total_minutes
+            total_duration += workouts[element]
     return total_duration
 def calculate_calories(calories):
     total_calories = 0
@@ -69,7 +66,7 @@ def reset_progress(workouts, calories):
     calories.clear()
     print("Your progress has been reset.")
 
-def set_daily_goals(workout_time, calorie_limit):
+def set_daily_goals():
     """
     Set daily goals for workout time and calorie intake.
     - Update the global variables workout_goal and calorie_goal.
@@ -81,11 +78,34 @@ def set_daily_goals(workout_time, calorie_limit):
           f"and consume {calorie_limit} calories today. We believe you can do it! 💪")
     return workout_time, calorie_limit
 
-def encouragement_system():
+def encouragement_system(workout_goal, calorie_goal, workouts, calories):
     """
     Provide motivational feedback based on progress and goals.
     - Compare current totals to the daily goals.
     - Print encouragement messages.
     """
-    pass
+    is_workout_met = False # Variable for checking if workout goal is met
+    is_calorie_met = False # Variable for checking if calorie intake goal is met
 
+    # Check if both goals were met
+    if workout_goal <= calculate_duration(workouts):
+        is_workout_met = True
+    if calorie_goal <= calculate_calories(calories):
+        is_calorie_met = True
+
+    # Writing the message
+    if is_workout_met:
+        workout_message = (f"Good job!💪 You have met your workout time goal from {workout_goal} minutes as"
+                            f"you have trained for {calculate_duration(workouts)} minutes today.")
+    else:
+        workout_message = (f"You still have {workout_goal - calculate_duration(workouts)} minutes until "
+                           f"you meet your goal of {workout_goal} minutes. Get back to work! 💪")
+    if is_calorie_met:
+        calorie_message = (f"Good job!💪 You have met your calorie intake goal from {calorie_goal} calories as"
+                            f"you have consumed {calculate_calories(calories)} calories today.")
+    else:
+        calorie_message = (f"You still have {calorie_goal - calculate_calories(calories)} calories until "
+                           f"you meet your goal of {calorie_goal} calories. It is time to eat more! 😁")
+
+    print(workout_message)
+    print(calorie_message)

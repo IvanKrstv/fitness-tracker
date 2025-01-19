@@ -13,8 +13,8 @@ workouts = []  # To store workout types and durations
 calories = []  # To store calorie intake for meals
 
 # Variables for daily goals
-workout_goal = 0  # Daily workout goal in minutes
-calorie_goal = 0  # Daily calorie intake goal
+workout_goal, calorie_goal = functions.set_daily_goals()  # Daily workout goal in minutes and calorie intake goal
+goals_set = False # Check if goals for the day are set
 
 # Assign values for user's personal data
 age = before_starting.user_age
