@@ -13,7 +13,7 @@ def before_starting():
       print("Welcome to the Personal Fitness Tracker System 🏋️‍♂"
             ""
             "️\n\nWe would like to ask you some questions to get to know you better and improve your experience.")
-      sleep(5)
+      sleep(3)
       # Input for age
       user_age = get_age()
 

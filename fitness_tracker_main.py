@@ -4,10 +4,6 @@ from time import sleep
 import before_starting # The work of the program before the main body (asking for personal information)
 import functions # Functions for the choices from the main menu
 
-# Executing the start of the program and clearing the terminal
-before_starting.before_starting()
-system("pause")
-system("cls")
 
 # Lists to store fitness data
 workouts = []  # To store workout types and durations
@@ -67,4 +63,10 @@ def main():
 
 
 if __name__ == "__main__":
+    # Executing the start of the program and clearing the terminal
+    before_starting.before_starting()
+    system("pause")
+    system("cls")
+
+    # Executing the main program
     main()
