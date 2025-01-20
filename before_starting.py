@@ -67,14 +67,14 @@ def before_starting():
 
       # Printing a message of the needed calories according to the choice
       if choice == 1:
-            print(f"If you want to maintain your current weight, your caloric intake should match your Total Daily Energy Expenditure (TDEE)."
+            print(f"\nIf you want to maintain your current weight, your caloric intake should match your Total Daily Energy Expenditure (TDEE)."
                   f"\nFor you this is around {daily_calories} calories a day.")
       elif choice == 2:
-            print(f"For bulking (gaining muscle mass), you should consume more calories than your Total Daily Energy Expenditure (TDEE) to create a caloric surplus."
+            print(f"\nFor bulking (gaining muscle mass), you should consume more calories than your Total Daily Energy Expenditure (TDEE) to create a caloric surplus."
                   f"\nA common recommendation for lean bulking (gaining muscle with minimal fat gain) is to start with a 250-500 calorie surplus. "
                   f"\nFor you this is between {daily_calories + 250} and {daily_calories + 500} calories a day.")
       elif choice == 3:
-            print(f"For cutting (losing fat), you need to consume fewer calories than your total Daily Energy Expenditure (TDEE) to create a caloric deficit."
+            print(f"\nFor cutting (losing fat), you need to consume fewer calories than your total Daily Energy Expenditure (TDEE) to create a caloric deficit."
                   f"\nA moderate deficit is recommended to avoid losing muscle mass, usually around 300-500 calories below TDEE."
                   f"\nFor you this is between {daily_calories - 500} and {daily_calories - 300} calories a day.")
       print("Remember to always track your calories 😃. You can do that in our app.")

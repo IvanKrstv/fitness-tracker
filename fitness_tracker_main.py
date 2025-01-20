@@ -1,5 +1,6 @@
 # Personal Fitness Tracker System 🏋️‍♂️
 from os import system # For pausing and clearing terminal
+from time import sleep
 import before_starting # The work of the program before the main body (asking for personal information)
 import functions # Functions for the choices from the main menu
 
@@ -41,26 +42,27 @@ def main():
         choice = input("\nEnter your choice: ")
 
         if choice == '1':
-            # Prompt for workout type and duration
-            pass
+            functions.log_workout() # Prompt for workout type and duration
+
         elif choice == '2':
-            # Prompt for calories consumed
-            pass
+            functions.log_calorie_intake() # Prompt for calories consumed
+
         elif choice == '3':
-            # Call view_progress function
-            pass
+            functions.view_progress() # Call view_progress function
+
         elif choice == '4':
-            # Call reset_progress function
-            pass
+            functions.reset_progress() # Call reset_progress function
+
         elif choice == '5':
-            # Prompt for daily goals
-            pass
+            functions.set_daily_goals() # Prompt for daily goals
+
         elif choice == '6':
             # Print a goodbye message and break the loop
             print("Thank you for using the Fitness Tracker. Stay healthy! 💪")
             break
         else:
             print("Invalid choice, please try again.")
+            sleep(2)
 
 
 if __name__ == "__main__":
