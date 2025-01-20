@@ -14,7 +14,7 @@ workouts = []  # To store workout types and durations
 calories = []  # To store calorie intake for meals
 
 # Variables for daily goals
-workout_goal, calorie_goal = functions.set_daily_goals()  # Daily workout goal in minutes and calorie intake goal
+workout_goal = calorie_goal = 0  # Daily workout goal in minutes and calorie intake goal
 goals_set = False # Check if goals for the day are set
 
 # Assign values for user's personal data
@@ -54,7 +54,8 @@ def main():
             functions.reset_progress() # Call reset_progress function
 
         elif choice == '5':
-            functions.set_daily_goals() # Prompt for daily goals
+            global workout_goal, calorie_goal
+            workout_goal, calorie_goal = functions.set_daily_goals() # Prompt for daily goals
 
         elif choice == '6':
             # Print a goodbye message and break the loop
