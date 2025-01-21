@@ -5,10 +5,9 @@ user_age = 0
 user_weight = 0
 user_height = 0
 user_gender = None
-daily_calories = 0
 
 def before_starting():
-      global user_age, user_weight, user_height, user_gender, daily_calories
+      global user_age, user_weight, user_height, user_gender
 
       print("Welcome to the Personal Fitness Tracker System 🏋️‍♂"
             ""

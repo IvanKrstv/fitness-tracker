@@ -79,10 +79,10 @@ def set_daily_goals():
     - Update the global variables workout_goal and calorie_goal.
     - Print a confirmation message.
     """
-    workout_time = float(input("How many minutes would you like to train today? Minutes: "))
+    workout_time = int(input("How many minutes would you like to train today? Minutes: "))
     calorie_limit = float(input("How many calories would you like to consume today? Calories: "))
     print(f"You have set a goal to workout {workout_time} minutes "
-          f"and consume {calorie_limit} calories today. We believe you can do it! 💪")
+          f"and consume {int(calorie_limit) if calorie_limit.is_integer() else calorie_limit} calories today. We believe you can do it! 💪")
     return workout_time, calorie_limit
 
 def encouragement_system_workouts(workout_goal):
