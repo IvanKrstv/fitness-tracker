@@ -105,7 +105,6 @@ def encouragement_system_workouts(workout_goal):
         workout_message = (f"You still have {workout_goal - calculate_duration()} minutes until "
                            f"you meet your goal of {workout_goal} minutes. Get back to work! 💪")
     print(workout_message)
-
 def encouragement_system_calories(calorie_goal):
     """
     Provide motivational feedback based on progress and goals.

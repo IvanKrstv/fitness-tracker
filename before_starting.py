@@ -1,4 +1,5 @@
-from before_start_functions import get_choice
+from before_start_functions import get_gender, get_height, get_age, get_weight, get_choice, calculate_bmr
+from time import sleep
 
 user_age = 0
 user_weight = 0
@@ -7,9 +8,6 @@ user_gender = None
 daily_calories = 0
 
 def before_starting():
-      from time import sleep
-      from before_start_functions import get_gender, get_height, get_age, get_weight, check_input, calculate_bmr
-
       global user_age, user_weight, user_height, user_gender, daily_calories
 
       print("Welcome to the Personal Fitness Tracker System 🏋️‍♂"

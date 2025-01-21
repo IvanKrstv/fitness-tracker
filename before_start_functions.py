@@ -52,17 +52,6 @@ def calculate_bmr(age, weight, height, gender):
         bmr = 10 * weight + 6.25 * height - 5 * age - 161
     return bmr
 
-def check_input(variable, a, b):
-    try:
-        variable = int(variable)
-    except ValueError:
-        print("Invalid input! Please enter a number.")
-        return False
-    if variable not in range(a, b + 1):
-        print(f"The number is not in the given range. Please enter a number in the range between {a} and {b}")
-        return False
-    return True
-
 def get_choice(a, b):
     while True:
         try:
