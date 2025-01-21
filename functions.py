@@ -127,3 +127,14 @@ def encouragement_system_calories(calorie_goal):
 def clear_screen():
     system("pause")
     system("cls")
+
+def check_input(variable, a, b):
+    try:
+        variable = int(variable)
+    except ValueError:
+        print("Invalid input! Please enter a number.")
+        return False
+    if variable not in range(a, b + 1):
+        print(f"The number is not in the given range. Please enter a number in the range between {a} and {b}")
+        return False
+    return True
