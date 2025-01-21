@@ -8,7 +8,9 @@ def log_workout():
     - Print a confirmation message.
     """
     workout_type = input("What type of workout did you do?\nType of workout: ")
-    duration = float(input("Duration (in minutes): "))
+    duration = check_input("Duration (in minutes): ")
+    duration = int(duration)
+
     workouts.append(workout_type)
     workouts.append(duration)
 
@@ -16,7 +18,7 @@ def log_workout():
         final_message = f"Your workout: {workout_type} for {duration // 60} hours and {duration - duration // 60 * 60} minutes has been successfully saved."
     else:
         final_message = f"Your workout: {workout_type} for {duration} minutes has been successfully saved."
-    print(final_message)
+    print(f"\n{final_message}")
 
 def log_calorie_intake():
     """
@@ -24,9 +26,11 @@ def log_calorie_intake():
     - Append the calorie amount to the calories list.
     - Print a confirmation message.
     """
-    calories_consumed = float(input("How many calories did you have in your meal?\nCalories: "))
+    calories_consumed = check_input("How many calories did you have in your meal?\nCalories: ")
+
     calories.append(calories_consumed)
-    final_message = f"You consumed {calories_consumed} in this meal and they have been successfully saved."
+
+    final_message = f"You consumed {int(calories_consumed) if calories_consumed.is_integer() else calories_consumed} in this meal and they have been successfully saved."
     print(final_message)
 
 def calculate_duration():
@@ -125,16 +129,14 @@ def encouragement_system_calories(calorie_goal):
     print(calorie_message)
 
 def clear_screen():
+    print()
     system("pause")
     system("cls")
 
-def check_input(variable, a, b):
-    try:
-        variable = int(variable)
-    except ValueError:
-        print("Invalid input! Please enter a number.")
-        return False
-    if variable not in range(a, b + 1):
-        print(f"The number is not in the given range. Please enter a number in the range between {a} and {b}")
-        return False
-    return True
+def check_input(message):
+    while True:
+        try:
+            variable = float(input(message))
+            return variable
+        except ValueError:
+            print("Invalid input! Please enter a number.")
