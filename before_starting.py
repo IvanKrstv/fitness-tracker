@@ -1,3 +1,5 @@
+from before_start_functions import get_choice
+
 user_age = 0
 user_weight = 0
 user_height = 0
@@ -34,10 +36,7 @@ def before_starting():
             "\n4. Very active (hard exercise or sports 6-7 days a week)"
             "\n5. Super active (very hard exercise, physical job, or training twice a day)")
 
-      choice = input("Enter the number corresponding to your choice: ")
-      while not check_input(choice, 1, 5):
-            choice = input("Enter the number corresponding to your choice: ")
-      choice = int(choice)
+      choice = get_choice(1, 5)
 
       # Check what the activity factor constant should be equal to according to the level of physical activity
       activity_factor = 0
@@ -60,10 +59,7 @@ def before_starting():
             "\n2. Gaining muscle mass (bulking)"
             "\n3. Losing fat (cutting)")
 
-      choice = input("Enter the number corresponding to your choice: ")
-      while not check_input(choice, 1, 3):
-            choice = input("Enter the number corresponding to your choice: ")
-      choice = int(choice)
+      choice = get_choice(1, 3)
 
       # Printing a message of the needed calories according to the choice
       if choice == 1:

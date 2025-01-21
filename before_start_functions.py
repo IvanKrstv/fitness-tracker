@@ -62,3 +62,14 @@ def check_input(variable, a, b):
         print(f"The number is not in the given range. Please enter a number in the range between {a} and {b}")
         return False
     return True
+
+def get_choice(a, b):
+    while True:
+        try:
+            choice = int(input("Enter the number corresponding to your choice: "))
+            if choice in range(a, b + 1):
+                return choice
+            else:
+                print(f"The number is not in the given range. Please enter a number in the range between {a} and {b}")
+        except ValueError:
+            print("Invalid input! Please enter a number.")
