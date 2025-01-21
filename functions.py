@@ -56,7 +56,7 @@ def view_progress(workout_goal, calorie_goal, goals_set):
         duration_message = f"\nYour total workout time today is: {total_duration // 60} hours and {total_duration - total_duration // 60 * 60} minutes."
     else:
         duration_message = f"Your total workout time today is: {total_duration} minutes."
-    calories_message = f"\nYou have consumed {total_calories} calories today."
+    calories_message = f"\nYou have consumed {int(total_calories) if total_calories.is_integer() else total_calories} calories today."
     print(duration_message)
     if goals_set:
         print(encouragement_system_workouts(workout_goal))
@@ -100,7 +100,7 @@ def encouragement_system_workouts(workout_goal):
 
     # Writing the message
     if is_workout_met:
-        workout_message = (f"Good job!💪 You have met your workout time goal of {workout_goal} minutes as"
+        workout_message = (f"Good job!💪 You have met your workout time goal of {workout_goal} minutes as "
                             f"you have trained for {calculate_duration()} minutes today.")
     else:
         workout_message = (f"You still have {workout_goal - calculate_duration()} minutes until "
@@ -120,11 +120,11 @@ def encouragement_system_calories(calorie_goal):
 
     # Writing the message
     if is_calorie_met:
-        calorie_message = (f"Good job!💪 You have met your calorie intake goal of {calorie_goal} calories as"
+        calorie_message = (f"Good job!💪 You have met your calorie intake goal of {int(calorie_goal) if calorie_goal.is_integer() else calorie_goal} calories as "
                             f"you have consumed {calculate_calories()} calories today.")
     else:
-        calorie_message = (f"You still have {calorie_goal - calculate_calories()} calories until "
-                           f"you meet your goal of {calorie_goal} calories. It is time to eat more! 😁")
+        calorie_message = (f"You still have {int(calorie_goal - calculate_calories()) if (calorie_goal - calculate_calories).is_integer() else calorie_goal - calculate_calories } calories until "
+                           f"you meet your goal of {int(calorie_goal) if calorie_goal.is_integer() else calorie_goal} calories. It is time to eat more! 😁")
 
     print(calorie_message)
 
