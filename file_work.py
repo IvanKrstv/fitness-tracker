@@ -1,9 +1,8 @@
 import os.path
-from fitness_tracker_main import user_age, user_weight, user_height, user_gender, workout_goal, calorie_goal, workouts, calories
 
 data_file = "user_data.txt"
 
-def file_write():
+def file_write(user_age, user_weight, user_height, user_gender, workout_goal, calorie_goal, workouts, calories):
     with open(data_file, "w") as file:
         file.write(f"Age: {user_age}"
                    f"\nWeight: {user_weight}"
