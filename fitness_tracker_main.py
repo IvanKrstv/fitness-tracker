@@ -1,6 +1,7 @@
 # Personal Fitness Tracker System 🏋️‍♂️
 import before_starting # The work of the program before the main body (asking for personal information)
 import functions # Functions for the choices from the main menu
+import file_work # Working with the file functions
 
 # Lists to store fitness data
 workouts = []  # To store workout types and durations
@@ -63,8 +64,9 @@ def main():
 
 if __name__ == "__main__":
     # Executing the start of the program and clearing the terminal
-    before_starting.before_starting()
-    functions.clear_screen()
+    if file_work.is_first_time():
+        before_starting.before_starting()
+        functions.clear_screen()
 
     # Executing the main program
     main()
