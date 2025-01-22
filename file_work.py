@@ -30,12 +30,12 @@ def file_read():
             elif line_num == 5:
                 cal_goal = int(line_list[1]) if line_list[1].isdigit() else float(line_list[1])
             elif line_num == 6:
-                line_list = line_list[1].replace('[', '').replace(']', '').replace('"', '')
+                line_list = line_list[1].replace('[', '').replace(']', '').replace("'", '').replace('"', '')
                 workouts_list = line_list.split(", ")
                 for element in range(1, len(workouts_list), 2):
                     workouts_list[element] = float(workouts_list[element])
             elif line_num == 7:
-                line_list = line_list[1].replace('[', '').replace(']', '').replace('"', '')
+                line_list = line_list[1].replace('[', '').replace(']', '').replace("'", '').replace('"', '')
                 calories_list = line_list.split(", ")
                 for element in range(len(calories_list)):
                     calories_list[element] = float(calories_list[element])

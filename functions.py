@@ -1,18 +1,26 @@
 from fitness_tracker_main import workouts, calories
 from os import system
 
-def log_workout():
+def log_workout(workouts_list):
     """
     Log a workout.
     - Append the workout type and duration to the workouts list.
     - Print a confirmation message.
     """
+    #def workout_type():
+     #   workout = input("What type of workout did you do?\nType of workout: ")
+      #  return workout
+    #def duration():
+     #   time = check_input("Duration (in minutes): ")
+      #  time = int(time)
+       # return time
+
     workout_type = input("What type of workout did you do?\nType of workout: ")
     duration = check_input("Duration (in minutes): ")
     duration = int(duration)
 
-    workouts.append(workout_type)
-    workouts.append(duration)
+    workouts_list.append(workout_type)
+    workouts_list.append(duration)
 
     if duration >= 60:
         final_message = f"Your workout: {workout_type} for {duration // 60} hours and {duration - duration // 60 * 60} minutes has been successfully saved."
@@ -20,7 +28,7 @@ def log_workout():
         final_message = f"Your workout: {workout_type} for {duration} minutes has been successfully saved."
     print(f"\n{final_message}")
 
-def log_calorie_intake():
+def log_calorie_intake(calories_list):
     """
     Log calorie intake for a meal.
     - Append the calorie amount to the calories list.
@@ -28,7 +36,7 @@ def log_calorie_intake():
     """
     calories_consumed = check_input("How many calories did you have in your meal?\nCalories: ")
 
-    calories.append(calories_consumed)
+    calories_list.append(calories_consumed)
 
     final_message = f"You consumed {int(calories_consumed) if calories_consumed.is_integer() else calories_consumed} in this meal and they have been successfully saved."
     print(final_message)

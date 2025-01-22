@@ -21,7 +21,7 @@ def main():
     """
     Main function to interact with the user.
     """
-    global workout_goal, calorie_goal, goals_set
+    global workouts, calories, workout_goal, calorie_goal, goals_set
     print("Welcome to the Personal Fitness Tracker System 🏋️‍♂️\n")
 
     while True:
@@ -38,12 +38,13 @@ def main():
         print()
 
         if choice == '1':
-            workouts.append(functions.log_workout()) # Prompt for workout type and duration
+            functions.log_workout(workouts) # Prompt for workout type and duration
             print(workouts)
             functions.clear_screen()
 
         elif choice == '2':
-            calories.append(functions.log_calorie_intake()) # Prompt for calories consumed
+            functions.log_calorie_intake(calories) # Prompt for calories consumed
+            print(calories)
             functions.clear_screen()
 
         elif choice == '3':
@@ -82,8 +83,7 @@ if __name__ == "__main__":
 
             functions.clear_screen() # Clearing the screen to continue with the main program
         else:
-            #user_age, user_weight, user_height, user_gender, workout_goal, calorie_goal, goals_set = file_work.file_read() # If the program is not opened for a first time, read user's data from a file
-            pass
+            user_age, user_weight, user_height, user_gender, workout_goal, calorie_goal, goals_set = file_work.file_read() # If the program is not opened for a first time, read user's data from a file
         # Executing the main program
         main()
 
