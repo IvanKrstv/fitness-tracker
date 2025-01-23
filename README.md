@@ -1,2 +1,2 @@
 # 🏃 Personal fitness tracker 🏋
- A mini app for a personal fitness tracker built with Python. I am open to looking at pull requests and any improvements at all. 
+ Welcome to the repository for a fitness tracker app. This is a mini app built with Python. I am open to looking at pull requests and any improvements at all. 
