@@ -40,25 +40,20 @@ def main():
         if choice == '1':
             functions.log_workout(workouts) # Prompt for workout type and duration
             print(workouts)
-            functions.clear_screen()
 
         elif choice == '2':
             functions.log_calorie_intake(calories) # Prompt for calories consumed
             print(calories)
-            functions.clear_screen()
 
         elif choice == '3':
-            functions.view_progress(workout_goal, calorie_goal, goals_set) # Call view_progress function
-            functions.clear_screen()
+            functions.view_progress(workouts, calories, workout_goal, calorie_goal, goals_set) # Call view_progress function
 
         elif choice == '4':
-            functions.reset_progress() # Call reset_progress function
-            functions.clear_screen()
+            functions.reset_progress(calories_list=calories, workouts_list=workouts) # Call reset_progress function
 
         elif choice == '5':
             workout_goal, calorie_goal = functions.set_daily_goals() # Prompt for daily goals
             goals_set = True
-            functions.clear_screen()
 
         elif choice == '6':
             # Print a goodbye message and break the loop
@@ -66,7 +61,8 @@ def main():
             break
         else:
             print("Invalid choice, please try again.")
-            functions.clear_screen()
+
+        functions.clear_screen()
 
 
 if __name__ == "__main__":
