@@ -39,11 +39,9 @@ def main():
 
         if choice == '1':
             functions.log_workout(workouts) # Prompt for workout type and duration
-            print(workouts)
 
         elif choice == '2':
             functions.log_calorie_intake(calories) # Prompt for calories consumed
-            print(calories)
 
         elif choice == '3':
             functions.view_progress(workouts, calories, workout_goal, calorie_goal, goals_set) # Call view_progress function
